@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Zen - Landing Page Stylesheet
+   ========================================================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Color Variables and Base Setup */
+:root {
+  --color-lino: #F9F9F8;
+  --color-botanico: #1E392A;
+  --color-botanico-light: #2d563f;
+  --color-botanico-dark: #122319;
+  --color-arena: #C19A6B;
+  --color-arena-light: #d4b590;
+  --color-arena-dark: #a98051;
+  --color-whatsapp: #25D366;
+  
+  --font-titles: 'Montserrat', sans-serif;
+  --font-paragraphs: 'Inter', sans-serif;
+  
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-paragraphs);
+  background-color: var(--color-lino);
+  color: var(--color-botanico-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-titles);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-lino);
+}
+::-webkit-scrollbar-thumb {
+  background: #c3c3bf;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-arena);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Before & After Slider
+   -------------------------------------------------------------------------- */
+.before-after-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* The before image is clipped using the --slider-pos custom property set by JS */
+.before-image-clip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 calc(100% - var(--slider-pos, 50%)) 0 0);
+  pointer-events: none;
+}
+
+
+
+/* Hide default range input styling to custom design it */
+.slider-range-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 30;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* --------------------------------------------------------------------------
+   Animations and Transitions
+   -------------------------------------------------------------------------- */
+
+/* Pulse animation for WhatsApp button */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* Fade In Scroll Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom styles for Carousel Scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Image Hover Zoom Effect */
+.hover-zoom img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Custom styles to extend Tailwind colors */
+.bg-lino { background-color: var(--color-lino); }
+.bg-botanico { background-color: var(--color-botanico); }
+.bg-botanico-light { background-color: var(--color-botanico-light); }
+.bg-botanico-dark { background-color: var(--color-botanico-dark); }
+.bg-arena { background-color: var(--color-arena); }
+.bg-arena-light { background-color: var(--color-arena-light); }
+.bg-arena-dark { background-color: var(--color-arena-dark); }
+.bg-whatsapp { background-color: var(--color-whatsapp); }
+
+.text-lino { color: var(--color-lino); }
+.text-botanico { color: var(--color-botanico); }
+.text-botanico-dark { color: var(--color-botanico-dark); }
+.text-arena { color: var(--color-arena); }
+
+.border-botanico { border-color: var(--color-botanico); }
+.border-arena { border-color: var(--color-arena); }
+.border-lino { border-color: var(--color-lino); }
+
+.focus-ring-arena:focus {
+  outline: none;
+  border-color: var(--color-arena);
+  box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.2);
+}

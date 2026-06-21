@@ -1,0 +1,22 @@
+{
+  "name": "zen-landing-page",
+  "version": "1.0.0",
+  "description": "Landing Page de alta conversión para Zen - Arquitectura del Paisaje & Vivero Boutique",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "zen",
+    "paisajismo",
+    "landing-page",
+    "tailwind"
+  ],
+  "author": "Feer",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.11"
+  }
+}
