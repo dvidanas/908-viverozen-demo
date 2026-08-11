@@ -159,3 +159,15 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-arena);
   box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.2);
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

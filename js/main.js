@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initBeforeAfterSlider();
   initPortfolioFilters();
+  initPortfolioCarousel();
   initNurseryCarousel();
   initContactForm();
   initScrollReveal();
@@ -154,6 +155,92 @@ function initPortfolioFilters() {
           }, 300);
         }
       });
+    });
+  });
+}
+
+/**
+ * 4b. Portfolio Carousel Interactions
+ * Handles dragging to scroll and the scroll progress bar.
+ */
+function initPortfolioCarousel() {
+  const carousel = document.getElementById('portfolio-carousel');
+  const progressBar = document.getElementById('carousel-progress');
+  if (!carousel || !progressBar) return;
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // 1. Mouse Drag-to-Scroll (Desktop)
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    carousel.classList.remove('cursor-grab');
+    carousel.classList.add('cursor-grabbing');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.classList.remove('cursor-grabbing');
+    carousel.classList.add('cursor-grab');
+  });
+
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.classList.remove('cursor-grabbing');
+    carousel.classList.add('cursor-grab');
+  });
+
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2; // scroll speed
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+
+  // 2. Update Progress Bar
+  const updateProgress = () => {
+    const scrollWidth = carousel.scrollWidth;
+    const clientWidth = carousel.clientWidth;
+    const maxScroll = scrollWidth - clientWidth;
+    
+    // Hide progress bar container if content fits without scrolling
+    if (maxScroll <= 1) {
+      progressBar.parentElement.classList.add('opacity-0');
+      progressBar.parentElement.classList.remove('opacity-100');
+      return;
+    } else {
+      progressBar.parentElement.classList.remove('opacity-0');
+      progressBar.parentElement.classList.add('opacity-100');
+    }
+
+    const percentage = carousel.scrollLeft / maxScroll;
+    const visibleRatio = clientWidth / scrollWidth;
+    const barWidth = visibleRatio * 100;
+    const leftOffset = percentage * (1 - visibleRatio) * 100;
+    
+    progressBar.style.width = `${visibleRatio > 0 ? barWidth : 0}%`;
+    progressBar.style.transform = `translateX(${leftOffset / visibleRatio}%)`;
+  };
+
+  // Run on scroll
+  carousel.addEventListener('scroll', updateProgress);
+
+  // Run on window resize (since clientWidth changes)
+  window.addEventListener('resize', updateProgress);
+
+  // Initial call
+  setTimeout(updateProgress, 300);
+
+  // 3. Listen to filter buttons to update progress bar when grid changes
+  const filterButtons = document.querySelectorAll('.portfolio-filter-btn');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Wait for the hidden/shown transition animations to finish, then recalculate
+      setTimeout(updateProgress, 350);
     });
   });
 }

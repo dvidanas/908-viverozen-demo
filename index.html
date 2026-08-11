@@ -337,85 +337,96 @@
       </div>
 
       <!-- Portfolio Grid -->
-      <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Portfolio Carousel Container (Horizontal Scroll/Draggable) -->
+      <div class="relative w-full overflow-hidden select-none">
         
-        <!-- Item 1 (Terrazas) -->
-        <div class="portfolio-item group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="terrazas">
-          <img src="images/portfolio_residencial_1.png" class="w-full h-full object-cover" alt="Proyecto Bosque Residencial Zen">
-          <!-- Hover Content Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Terrazas</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Casa Terrazas</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Proyecto de terrazas escalonadas integrando vegetación nativa y zonas de descanso minimalista.
-            </p>
+        <!-- Draggable Wrapper -->
+        <div id="portfolio-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory cursor-grab active:cursor-grabbing scrollbar-hide py-4" style="scroll-snap-type: x mandatory;">
+          
+          <!-- Item 1 (Jardines) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines">
+            <img src="images/portfolio_jardin_1.jpg" class="w-full h-full object-cover" alt="Residencia contemporánea con jardín de césped y arboleda">
+            <!-- Hover Content Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Jardín Los Álamos</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Diseño de paisajismo residencial contemporáneo integrando arboleda existente con césped y canteros.
+              </p>
+            </div>
           </div>
+
+          <!-- Item 2 (Terrazas) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="terrazas" style="transition-delay: 100ms;">
+            <img src="images/portfolio_jardin_2.jpg" class="w-full h-full object-cover" alt="Sendero de madera sobre piedras y canteros de piscina">
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Terrazas</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Deck Piscina y Piedras</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Sendero rústico de madera sobre piedra partida blanca con macetones y gramíneas junto a la piscina.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 (Jardines) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 200ms;">
+            <img src="images/portfolio_jardin_3.jpg" class="w-full h-full object-cover" alt="Jardín y fachada con jóvenes árboles alineados">
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Fachada Gris Arbolada</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Alineación perimetral de árboles jóvenes con tutores y arbustos ornamentales en una base de césped verde.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 (Terrazas) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="terrazas" style="transition-delay: 100ms;">
+            <img src="images/portfolio_jardin_4.jpg" class="w-full h-full object-cover" alt="Sendero pavimentado con maceteros de flores y pared de troncos">
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Terrazas</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Paseo de las Vincas</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Canteros elevados de cemento con flores y plantas colgantes bordeando una valla de troncos rústica.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 (Jardines) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 200ms;">
+            <img src="images/portfolio_jardin_5.jpg" class="w-full h-full object-cover" alt="Fachada y jardín terminado de Casa Zen">
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Jardín Zen Contemporáneo</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Diseño finalizado que combina canteros geométricos con arbustivas, gramíneas y césped impecable.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 6 (Jardines) -->
+          <div class="portfolio-item snap-start w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] flex-shrink-0 group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 300ms;">
+            <img src="images/portfolio_jardin_6.jpg" class="w-full h-full object-cover" alt="Jardín y fachada de Casa Zen vista desde el lateral">
+            <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
+              <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Fachada Zen Lateral</h4>
+              <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
+                Vista de perfil del paisajismo que enmarca la arquitectura de líneas puras y el sol de fondo.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Item 2 (Jardines) -->
-        <div class="portfolio-item group relative overflow-hidden h-[300px] sm:h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 100ms;">
-          <img src="images/portfolio_comercial_1.png" class="w-full h-full object-cover" alt="Proyecto Patio Café Comercial Zen">
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Distrito Oliva</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Remodelación botánica para patio gastronómico al aire libre con macetones y olivos históricos.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 3 (Jardines) -->
-        <div class="portfolio-item group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 200ms;">
-          <img src="images/portfolio_industrial_1.png" class="w-full h-full object-cover" alt="Proyecto Parque Logístico Industrial Zen">
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Complejo Logístico Norte</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Diseño de biocorredores sustentables de bajo consumo hídrico para fachadas industriales de gran escala.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 4 (Jardines) -->
-        <div class="portfolio-item group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 100ms;">
-          <img src="images/portfolio_residencial_2.png" class="w-full h-full object-cover" alt="Proyecto Ático Residencial Zen">
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Patio Piedra Blanca</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Diseño minimalista con base de piedra partida, arces japoneses y un estanque de reflexión.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 5 (Terrazas) -->
-        <div class="portfolio-item group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="terrazas" style="transition-delay: 200ms;">
-          <img src="images/portfolio_comercial_2.png" class="w-full h-full object-cover" alt="Proyecto Atrio Corporativo Zen">
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Terrazas</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Atrio Corporativo H</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Instalación de jardines de interior para oficinas, mejorando la calidad del aire y el confort térmico.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 6 (Jardines) -->
-        <div class="portfolio-item group relative overflow-hidden h-[400px] border border-white/5 rounded-sm hover-zoom transition-all duration-500 reveal-on-scroll" data-category="jardines" style="transition-delay: 300ms;">
-          <img src="images/portfolio_industrial_2.png" class="w-full h-full object-cover" alt="Proyecto Sede Corporativa Bio Zen">
-          <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark via-botanico-dark/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8">
-            <span class="text-[9px] tracking-widest font-semibold uppercase text-arena mb-1">Jardines</span>
-            <h4 class="font-titles text-lg font-bold uppercase tracking-wider text-white">Sede Tecnológica Sur</h4>
-            <p class="font-sans text-xs text-white/70 font-light mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed max-w-sm">
-              Paisajismo corporativo con especies perennes y xerófitas de nulo mantenimiento y alta resistencia.
-            </p>
-          </div>
+        <!-- Scroll Progress Bar Indicator -->
+        <div class="w-48 h-[2px] bg-white/10 mx-auto mt-10 relative rounded-full overflow-hidden">
+          <div id="carousel-progress" class="absolute top-0 left-0 h-full bg-arena transition-transform duration-100" style="width: 50%; transform-origin: left; transform: translateX(0);"></div>
         </div>
 
       </div>
