@@ -117,37 +117,37 @@
   <!-- ==========================================
        2. HERO SECTION
        ========================================== -->
-  <section id="hero" class="relative h-screen flex flex-col md:flex-row items-center md:items-stretch justify-center overflow-hidden bg-botanico-dark">
-    <!-- Hero Background Image (Full-Cover on Mobile, 50% split on Desktop) -->
-    <div class="absolute inset-0 md:relative md:w-1/2 md:h-full z-0 md:order-2">
+  <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Hero Background Image (Full-Cover, Edge-to-Edge) -->
+    <div class="absolute inset-0 z-0">
       <img src="images/hero_zen.jpg" class="w-full h-full object-cover object-bottom" alt="Diseño de paisajismo contemporáneo Zen con jardín verde estructurado durante el día">
-      <!-- Gradient overlay: Dark on mobile for text contrast, soft horizontal gradient on desktop to blend with the text side -->
-      <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark/85 via-botanico/65 to-botanico-dark/75 md:bg-gradient-to-r md:from-botanico-dark/40 md:to-transparent"></div>
+      <!-- Dark green semi-transparent overlay to guarantee high-contrast legibility -->
+      <div class="absolute inset-0 bg-gradient-to-t from-botanico-dark/85 via-botanico/65 to-botanico-dark/75"></div>
     </div>
 
-    <!-- Hero Content (Centered on Mobile, left-aligned on Desktop left column) -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center md:text-left text-white flex flex-col items-center md:items-start justify-center md:w-1/2 md:h-full md:max-w-none md:mx-0 md:px-16 lg:px-24 md:order-1">
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center text-white flex flex-col items-center">
       <span class="text-xs md:text-sm tracking-[0.4em] uppercase font-semibold text-arena mb-4 block reveal-on-scroll">
         Arquitectura del Paisaje & Curaduría Botánica
       </span>
-      <h1 class="font-titles text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-wider leading-[1.1] mb-6 max-w-4xl reveal-on-scroll" style="transition-delay: 150ms;">
+      <h1 class="font-titles text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider leading-[1.1] mb-6 max-w-4xl reveal-on-scroll" style="transition-delay: 150ms;">
         Arquitectura del paisaje para transformar tu entorno
       </h1>
-      <p class="font-sans text-sm md:text-base lg:text-lg text-white/80 max-w-2xl font-light tracking-wide leading-relaxed mb-10 reveal-on-scroll" style="transition-delay: 300ms;">
+      <p class="font-sans text-sm md:text-lg text-white/80 max-w-2xl font-light tracking-wide leading-relaxed mb-10 reveal-on-scroll" style="transition-delay: 300ms;">
         Creamos proyectos de paisajismo arquitectónico que integran la naturaleza de forma funcional y minimalista en residencias privadas, desarrollos comerciales y áreas corporativas.
       </p>
-      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 reveal-on-scroll w-full sm:w-auto" style="transition-delay: 450ms;">
-        <a href="#contacto" class="bg-arena hover:bg-arena-dark text-white font-titles text-xs tracking-widest uppercase font-semibold px-8 py-4 transition-colors duration-300 rounded-sm text-center">
+      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 reveal-on-scroll" style="transition-delay: 450ms;">
+        <a href="#contacto" class="bg-arena hover:bg-arena-dark text-white font-titles text-xs tracking-widest uppercase font-semibold px-8 py-4 transition-colors duration-300 rounded-sm">
           Iniciar Proyecto
         </a>
-        <a href="#antes-despues" class="border border-white/30 hover:border-white hover:bg-white/5 text-white font-titles text-xs tracking-widest uppercase font-semibold px-8 py-4 transition-colors duration-300 rounded-sm text-center">
+        <a href="#antes-despues" class="border border-white/30 hover:border-white hover:bg-white/5 text-white font-titles text-xs tracking-widest uppercase font-semibold px-8 py-4 transition-colors duration-300 rounded-sm">
           Explorar Servicios
         </a>
       </div>
     </div>
 
-    <!-- Scroll Indicator (Centered on mobile, centered under left column on desktop) -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-[25%] z-10 flex flex-col items-center">
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
       <span class="text-[10px] text-white/50 uppercase tracking-[0.25em] mb-2 font-medium">Deslizar</span>
       <div class="w-[1px] h-12 bg-white/20 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1/2 bg-arena animate-bounce"></div>
